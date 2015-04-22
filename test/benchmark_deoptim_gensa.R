@@ -5,8 +5,8 @@ rm(list=ls());
 setwd('~/code/optimal_th/');
 
 # load functions
-source('~/code/optimal_th/code/gensa_test.R');
-source('~/code/optimal_th/code/optimal_th.R');
+source('code/optimal_th_sa.R');
+source('code/optimal_th.R');
 
 # generate test data
 k = 20;
@@ -28,7 +28,7 @@ ga_res$optim$bestmem
 
 # single run usgin GenSA package
 rtm = proc.time();
-sa_res = gensa_test(pred_prob, Y, err_val = 0.05);
+sa_res = optimal_th_sa(pred_prob, Y, err_val = 0.05);
 print(proc.time()-rtm);
 # plot the progress
 plot(sa_res$trace.mat[,3])
