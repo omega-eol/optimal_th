@@ -6,12 +6,12 @@
 using namespace Rcpp;
 
 // [[Rcpp::export]]
-arma::uvec findRowMax(arma::mat X) {
+arma::vec findRowMax(arma::mat X) {
      // get number of rows
      int n = X.n_rows;
      
      // initialize the output vector
-     arma::uvec res = arma::ones<arma::uvec>(n);
+     arma::vec res = arma::ones<arma::vec>(n);
      
      // for each row
      for (int i = 0; i < n; i++) {
@@ -25,7 +25,7 @@ arma::uvec findRowMax(arma::mat X) {
 };
 
 // [[Rcpp::export]]
-std::map<int, int> tabulate_rcpp(arma::uvec a, int k) {
+std::map<int, int> tabulate_rcpp(arma::vec a, int k) {
      std::map<int, int> counts;
      
      // initialize the map

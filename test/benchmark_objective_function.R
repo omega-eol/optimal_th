@@ -11,7 +11,6 @@ Rcpp::sourceCpp('code/cutoffError.cpp'); # impelentation in Rcpp
 # load benchmark library
 library('rbenchmark');
 
-# B1
 k = 30; # number of classes
 n = 10000; # number of points
 
